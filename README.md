@@ -56,15 +56,15 @@ Evaluated on the unseen **3,000-image test set**, the deeper 4-layer architectur
 * **Training & Generalization:** Data augmentation and dropout (`0.3` / `0.4`) successfully prevented overfitting, keeping training and validation loss closely aligned throughout training.
 * **Confusion Matrix Insights:** Primary misclassifications occurred between visually overlapping classes—specifically **Mountain vs. Glacier** (shared snow/rock textures) and **Buildings vs. Street** (urban structural overlap).
 
-![Model 1 Training Curves](assets/model1_curves.png)
-![Model 1 Confusion Matrix](assets/model1_cm.png)
+![Model 1 Training Curves](curve_accuracy_and_loss(4_layers).png)
+![Model 1 Confusion Matrix](matrix_4_layer.png)
 
 ---
 
 ## 🔥 Model Interpretability (Spatial Activation Heatmaps)
 To verify that the network learns meaningful semantic regions rather than background noise, a fully convolutional inference pass was performed on high-resolution (`300×300`) test images to extract `(19, 19, 6)` spatial activation maps. The resulting class activation heatmaps confirm that the model accurately localizes architectural structures (e.g., achieving **99.97% confidence** on `buildings`).
 
-![Activation Heatmaps](assets/heatmap_result.png)
+![Activation Heatmaps](heatmap.png)
 
 ---
 
